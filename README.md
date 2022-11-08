@@ -13,15 +13,20 @@
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
+| <a name="requirement_argocd"></a> [argocd](#requirement\_argocd) | >= 4.1.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.38.0 |
+| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | >= 2.15.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_argocd"></a> [argocd](#provider\_argocd) | n/a |
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
-| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | n/a |
+| <a name="provider_argocd"></a> [argocd](#provider\_argocd) | >= 4.1.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.38.0 |
+| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | >= 2.15.0 |
 
 ## Modules
 
@@ -31,7 +36,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [argocd_cluster.additional](https://registry.terraform.io/providers/hashicorp/argocd/latest/docs/resources/cluster) | resource |
+| [argocd_cluster.additional](https://registry.terraform.io/providers/oboukili/argocd/latest/docs/resources/cluster) | resource |
 | [kubernetes_cluster_role_binding_v1.argocd_admin](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/cluster_role_binding_v1) | resource |
 | [kubernetes_cluster_role_v1.argocd_admin](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/cluster_role_v1) | resource |
 | [kubernetes_service_account_v1.argocd_admin](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/service_account_v1) | resource |
