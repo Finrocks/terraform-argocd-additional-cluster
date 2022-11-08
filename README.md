@@ -16,9 +16,7 @@ No requirements.
 
 ## Modules
 
-| Name | Source | Version |
-|------|--------|---------|
-| <a name="module_argocd_deployer_role"></a> [argocd\_deployer\_role](#module\_argocd\_deployer\_role) | cloudposse/iam-role/aws | 0.17.0 |
+No modules.
 
 ## Resources
 
