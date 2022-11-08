@@ -44,7 +44,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_eks_cluster_id"></a> [eks\_cluster\_id](#input\_eks\_cluster\_id) | EKS cluster ID. | `string` | `null` | no |
+| <a name="input_eks_cluster_id"></a> [eks\_cluster\_id](#input\_eks\_cluster\_id) | EKS cluster ID. | `string` | n/a | yes |
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Set to false to prevent the module from creating any resources | `bool` | `null` | no |
 | <a name="input_insecure"></a> [insecure](#input\_insecure) | n/a | `bool` | `false` | no |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | The Kubernetes namespace where service account will be installed to. | `string` | `"kube-system"` | no |
