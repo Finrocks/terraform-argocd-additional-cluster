@@ -38,8 +38,8 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_eks_cluster_id"></a> [eks\_cluster\_id](#input\_eks\_cluster\_id) | EKS cluster ID. | `string` | n/a | yes |
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Set to false to prevent the module from creating any resources | `bool` | `null` | no |
-| <a name="input_insecure"></a> [insecure](#input\_insecure) | Set to false to prevent the module from creating any resources | `bool` | `false` | no |
-| <a name="input_namespace"></a> [namespace](#input\_namespace) | ID element. Usually an abbreviation of your organization name, e.g. 'eg' or 'cp', to help ensure generated IDs are globally unique | `string` | `"kube-system"` | no |
+| <a name="input_insecure"></a> [insecure](#input\_insecure) | n/a | `bool` | `false` | no |
+| <a name="input_namespace"></a> [namespace](#input\_namespace) | The Kubernetes namespace where service account will be installed to. | `string` | `"kube-system"` | no |
 
 ## Outputs
 
