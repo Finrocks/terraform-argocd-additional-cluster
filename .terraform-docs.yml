@@ -1,0 +1,37 @@
+formatter: markdown
+
+output:
+  file: README.md
+  mode: replace
+  template: |-
+    # terraform-argocd-additional-cluster
+    A terraform module to create additional cluster for ArgoCD.
+    ## Usage
+    ```hcl
+    module "argocd_additional_cluster" {
+      source              = "git::https://github.com/Finrocks/terraform-argocd-additional-cluster.git?ref=master"
+      eks_cluster_id      = "my-super-cluster"
+    }
+    ```
+    <!-- BEGIN_TF_DOCS -->
+    {{ .Content }}
+    <!-- END_TF_DOCS --> 
+    ## License
+    The Apache-2.0 license
+sort:
+  enabled: true
+  by: required
+
+settings:
+  anchor: true
+  color: true
+  default: true
+  description: false
+  escape: true
+  hide-empty: false
+  html: true
+  indent: 2
+  lockfile: true
+  required: true
+  sensitive: true
+  type: true
