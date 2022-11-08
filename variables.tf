@@ -21,5 +21,6 @@ variable "insecure" {
 
 variable "eks_cluster_id" {
   type        = string
+  default     = null
   description = "EKS cluster ID."
 }
