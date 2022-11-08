@@ -8,14 +8,14 @@ variable "enabled" {
 variable "namespace" {
   type        = string
   default     = "kube-system"
-  description = "ID element. Usually an abbreviation of your organization name, e.g. 'eg' or 'cp', to help ensure generated IDs are globally unique"
+  description = "The Kubernetes namespace where service account will be installed to."
 }
 
 
 variable "insecure" {
   type        = bool
   default     = false
-  description = "Set to false to prevent the module from creating any resources"
+  description = ""
 }
 
 
