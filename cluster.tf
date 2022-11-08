@@ -51,7 +51,7 @@ data "kubernetes_secret_v1" "argocd_admin" {
 
 resource "argocd_cluster" "additional" {
   server = local.argocd_endpoint
-  name   = local.eks_cluster_name
+  name   = local.eks_cluster_id
 
   config {
     bearer_token = data.kubernetes_secret_v1.argocd_admin.data.token
