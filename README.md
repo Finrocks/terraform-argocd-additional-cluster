@@ -1,5 +1,12 @@
 # terraform-argocd-additional-cluster
 
+```hcl
+    module "argocd_additional_cluster" {
+      source              = "git::https://github.com/Finrocks/terraform-argocd-additional-cluster.git?ref=master"
+      eks_cluster_id      = "my-super-cluster"
+    }
+
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
