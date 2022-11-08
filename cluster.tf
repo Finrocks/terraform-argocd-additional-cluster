@@ -61,35 +61,3 @@ resource "argocd_cluster" "additional" {
     }
   }
 }
-
-
-
-
-
-
-
-module "argocd_deployer_role" {
-  enabled = false
-  source  = "cloudposse/iam-role/aws"
-  version = "0.17.0"
-
-  role_description      = "IAM Role to be used by ArgoCD to deploy in the SaaS cluster"
-  policy_description    = "Allow to assume this role by ArgoCD"
-  policy_document_count = 0
-
-  principals = {
-    AWS = [
-      module.argocd.server_service_account_role_arn,
-      module.argocd.application_controller_service_account_role_arn
-#      local.argo_workflows_cdp_sa_role_arn
-    ]
-  }
-
-  assume_role_actions = [
-    "sts:AssumeRole",
-    "sts:AssumeRoleWithWebIdentity"
-  ]
-
-  context    = module.argocd_label.context
-  attributes = ["argocd", "deployer"]
-}
