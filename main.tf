@@ -2,7 +2,7 @@ locals {
   enabled                     = module.this.enabled
   namespace                   = module.this.namespace
   insecure                    = var.insecure
-  ca_data                     = base64decode(one(data.aws_eks_cluster.cluster[0].certificate_authority[0].data))
+  ca_data                     = base64decode(one(data.aws_eks_cluster.cluster[*].certificate_authority[0].data))
   eks_cluster_id              = one(data.aws_eks_cluster.cluster[*].id)
   argocd_endpoint             = one(data.aws_eks_cluster.cluster[*].endpoint)
 }
