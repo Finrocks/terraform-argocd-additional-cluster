@@ -59,4 +59,8 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_ca_data"></a> [ca\_data](#output\_ca\_data) | n/a |
+| <a name="output_ca_data1"></a> [ca\_data1](#output\_ca\_data1) | n/a |
+| <a name="output_ca_data2"></a> [ca\_data2](#output\_ca\_data2) | n/a |
+| <a name="output_ca_data3"></a> [ca\_data3](#output\_ca\_data3) | n/a |
+| <a name="output_ca_data4"></a> [ca\_data4](#output\_ca\_data4) | n/a |
 <!-- END_TF_DOCS -->
