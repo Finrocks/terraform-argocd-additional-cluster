@@ -1,4 +1,6 @@
 resource "kubernetes_service_account_v1" "argocd_admin" {
+  count = local.enabled ? 1 : 0
+  
   metadata {
     name      = "argocd-admin"
     namespace = local.namespace
@@ -6,6 +8,8 @@ resource "kubernetes_service_account_v1" "argocd_admin" {
 }
 
 resource "kubernetes_cluster_role_v1" "argocd_admin" {
+  count = local.enabled ? 1 : 0
+  
   metadata {
     name = "argocd-admin-role"
   }
@@ -25,6 +29,8 @@ resource "kubernetes_cluster_role_v1" "argocd_admin" {
 }
 
 resource "kubernetes_cluster_role_binding_v1" "argocd_admin" {
+  count = local.enabled ? 1 : 0
+  
   metadata {
     name = "argocd-admin-role-binding"
   }
@@ -46,6 +52,8 @@ resource "kubernetes_cluster_role_binding_v1" "argocd_admin" {
 
 
 data "kubernetes_secret_v1" "argocd_admin" {
+  count = local.enabled ? 1 : 0
+  
   metadata {
     name      = kubernetes_service_account_v1.argocd_admin.default_secret_name
     namespace = kubernetes_service_account_v1.argocd_admin.metadata.0.namespace
@@ -55,6 +63,8 @@ data "kubernetes_secret_v1" "argocd_admin" {
 }
 
 resource "argocd_cluster" "additional" {
+  count = local.enabled ? 1 : 0
+  
   server = local.argocd_endpoint
   name   = local.eks_cluster_id
 
