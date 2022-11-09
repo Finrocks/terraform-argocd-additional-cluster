@@ -13,3 +13,8 @@ data "aws_eks_cluster" "cluster" {
   
   name = var.eks_cluster_id
 }
+
+
+output "ca_data" {
+  value = local.ca_data
+}
