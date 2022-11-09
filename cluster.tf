@@ -38,13 +38,13 @@ resource "kubernetes_cluster_role_binding_v1" "argocd_admin" {
   role_ref {
     api_group = "rbac.authorization.k8s.io"
     kind      = "ClusterRole"
-    name      = kubernetes_cluster_role_v1.argocd_admin.metadata.0.name
+    name      = one(kubernetes_cluster_role_v1.argocd_admin[*].metadata.0.name)
   }
 
   subject {
     kind      = "ServiceAccount"
-    name      = kubernetes_service_account_v1.argocd_admin.metadata.0.name
-    namespace = kubernetes_service_account_v1.argocd_admin.metadata.0.namespace
+    name      = one(kubernetes_service_account_v1.argocd_admin[*].metadata.0.name)
+    namespace = one(kubernetes_service_account_v1.argocd_admin[*].metadata.0.namespace)
   }
   
  depends_on = [kubernetes_cluster_role_v1.argocd_admin]
@@ -55,8 +55,8 @@ data "kubernetes_secret_v1" "argocd_admin" {
   count = local.enabled ? 1 : 0
   
   metadata {
-    name      = kubernetes_service_account_v1.argocd_admin.default_secret_name
-    namespace = kubernetes_service_account_v1.argocd_admin.metadata.0.namespace
+    name      = one(kubernetes_service_account_v1.argocd_admin[*].default_secret_name)
+    namespace = one(kubernetes_service_account_v1.argocd_admin[*].metadata.0.namespace)
   }
   
  depends_on = [kubernetes_cluster_role_binding_v1.argocd_admin] 
@@ -69,7 +69,7 @@ resource "argocd_cluster" "additional" {
   name   = local.eks_cluster_id
 
   config {
-    bearer_token = data.kubernetes_secret_v1.argocd_admin.data.token
+    bearer_token = one(data.kubernetes_secret_v1.argocd_admin[*].data.token)
     tls_client_config {
       ca_data = local.ca_data
       insecure = local.insecure
