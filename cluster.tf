@@ -20,6 +20,8 @@ resource "kubernetes_cluster_role_v1" "argocd_admin" {
     non_resource_urls = ["*"]
     verbs             = ["*"]
   }
+
+ depends_on = [kubernetes_service_account_v1.argocd_admin]
 }
 
 resource "kubernetes_cluster_role_binding_v1" "argocd_admin" {
@@ -38,7 +40,8 @@ resource "kubernetes_cluster_role_binding_v1" "argocd_admin" {
     name      = kubernetes_service_account_v1.argocd_admin.metadata.0.name
     namespace = kubernetes_service_account_v1.argocd_admin.metadata.0.namespace
   }
-
+  
+ depends_on = [kubernetes_cluster_role_v1.argocd_admin]
 }
 
 
@@ -47,6 +50,8 @@ data "kubernetes_secret_v1" "argocd_admin" {
     name      = kubernetes_service_account_v1.argocd_admin.default_secret_name
     namespace = kubernetes_service_account_v1.argocd_admin.metadata.0.namespace
   }
+  
+ depends_on = [kubernetes_cluster_role_binding_v1.argocd_admin] 
 }
 
 resource "argocd_cluster" "additional" {
@@ -60,4 +65,6 @@ resource "argocd_cluster" "additional" {
       insecure = local.insecure
     }
   }
+  
+  depends_on = [kubernetes_secret_v1.argocd_admin] 
 }
