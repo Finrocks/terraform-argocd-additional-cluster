@@ -66,5 +66,5 @@ resource "argocd_cluster" "additional" {
     }
   }
   
-  depends_on = [kubernetes_secret_v1.argocd_admin] 
+  depends_on = [data.kubernetes_secret_v1.argocd_admin] 
 }
