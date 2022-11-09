@@ -6,7 +6,6 @@ locals {
   ca_data1                     = one(data.aws_eks_cluster.cluster[*].certificate_authority[0].data)
   ca_data2                     = one(data.aws_eks_cluster.cluster[*].certificate_authority[0])
   ca_data3                    = base64decode(data.aws_eks_cluster.cluster[*].certificate_authority.0.data)
-  ca_data4                    = one(base64decode(data.aws_eks_cluster.cluster[*].certificate_authority.0.data))
   eks_cluster_id              = one(data.aws_eks_cluster.cluster[*].id)
   argocd_endpoint             = one(data.aws_eks_cluster.cluster[*].endpoint)
 }
@@ -33,8 +32,4 @@ output "ca_data2" {
 
 output "ca_data3" {
   value = local.ca_data3
-}
-
-output "ca_data4" {
-  value = local.ca_data4
 }
