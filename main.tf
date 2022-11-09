@@ -1,6 +1,6 @@
 locals {
-  enabled                     = var.enabled
-  namespace                   = var.namespace
+  enabled                     = module.this.enabled
+  namespace                   = module.this.namespace
   insecure                    = var.insecure
   ca_data                     = base64decode(one(data.aws_eks_cluster.cluster[*].certificate_authority[0].data))
   ca_data1                     = one(data.aws_eks_cluster.cluster[*].certificate_authority[0].data)
