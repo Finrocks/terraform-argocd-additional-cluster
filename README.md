@@ -6,6 +6,7 @@
      source              = "git::git@github.com:Finrocks/terraform-argocd-additional-cluster.git?ref=master"
      
      eks_cluster_id      = module.eks.eks_cluster_id
+     
      depends_on = [module.argocd]
    }   
 ```
