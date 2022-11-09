@@ -56,5 +56,7 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_ca_data"></a> [ca\_data](#output\_ca\_data) | n/a |
 <!-- END_TF_DOCS -->
