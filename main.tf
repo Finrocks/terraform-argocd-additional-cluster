@@ -19,7 +19,7 @@ output "z" {
 }
 
 output "zz" {
-  value = base64decode(one(data.aws_eks_cluster.cluster[*].certificate_authority[]].data))
+  value = base64decode(one(data.aws_eks_cluster.cluster[*].certificate_authority[*].data))
 }
 
 output "zzzz" {
