@@ -1,6 +1,6 @@
 locals {
   enabled                     = module.this.enabled
-  namespace                   = local.enabled && var.namespace
+  namespace                   = local.enabled && module.this["namespace"]
   insecure                    = local.enabled && var.insecure
   ca_data                     = local.enabled && base64decode(one(data.aws_eks_cluster.cluster[*].certificate_authority[0].data))
   eks_cluster_id              = local.enabled && one(data.aws_eks_cluster.cluster[*].id)
