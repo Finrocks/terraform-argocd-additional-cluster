@@ -102,7 +102,7 @@ variable "enabled" {
 
 variable "namespace" {
   type        = string
-  default     = null
+  default     = "kube-system"
   description = "ID element. Usually an abbreviation of your organization name, e.g. 'eg' or 'cp', to help ensure generated IDs are globally unique"
 }
 
