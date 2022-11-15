@@ -76,13 +76,5 @@
 
 | Name | Description |
 |------|-------------|
-| <a name="output_bb"></a> [bb](#output\_bb) | n/a |
-| <a name="output_bbb"></a> [bbb](#output\_bbb) | n/a |
 | <a name="output_ca_data"></a> [ca\_data](#output\_ca\_data) | n/a |
-| <a name="output_xvz"></a> [xvz](#output\_xvz) | n/a |
-| <a name="output_xz"></a> [xz](#output\_xz) | n/a |
-| <a name="output_z"></a> [z](#output\_z) | n/a |
-| <a name="output_zz"></a> [zz](#output\_zz) | n/a |
-| <a name="output_zzzz"></a> [zzzz](#output\_zzzz) | n/a |
-| <a name="output_zzzzzx"></a> [zzzzzx](#output\_zzzzzx) | n/a |
 <!-- END_TF_DOCS -->
